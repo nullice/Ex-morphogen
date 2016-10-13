@@ -9,7 +9,7 @@ body {
 .test {
   width: 100px; }
 
-.exmo_input_text {
+.exmo_input_text, .exmo_select {
   outline: none;
   -webkit-user-select: none;
   border: none;
@@ -22,14 +22,14 @@ body {
   min-width: 10px;
   font-family: "Microsoft YaHei", "Microsoft JhengHei", PingFang, "Hiragino Sans GB", "WenQuanYi Micro Hei", メイリオ, Meiryo, Helvetica, Arial, sans-serif;
   font-size: 13px; }
-  .exmo_input_text:focus {
+  .exmo_input_text:focus, .exmo_select:focus {
     border-bottom: 1px solid #1e76e3; }
-  .exmo_input_text:disabled {
+  .exmo_input_text:disabled, .exmo_select:disabled {
     color: #606060;
     opacity: .7; }
-  .exmo_input_text::-webkit-input-placeholder {
+  .exmo_input_text::-webkit-input-placeholder, .exmo_select::-webkit-input-placeholder {
     color: #909090; }
-  .exmo_input_text:invalid {
+  .exmo_input_text:invalid, .exmo_select:invalid {
     border-bottom: 1px solid #ec7669; }
 
 .exmo_area {
@@ -57,7 +57,7 @@ i.adobe {
   opacity: .8;
   display: inline-block; }
 
-.exmo_button, .exmo_button_ghost {
+.exmo_button, .exmo_button_ghost, .exmo_btn_group .btn_primary {
   outline: none;
   -webkit-user-select: none;
   border: 1px solid #B2B2B2;
@@ -68,19 +68,19 @@ i.adobe {
   color: #292929;
   font-family: "Microsoft YaHei", "Microsoft JhengHei", PingFang, "Hiragino Sans GB", "WenQuanYi Micro Hei", メイリオ, Meiryo, Helvetica, Arial, sans-serif;
   margin: 4px 0; }
-  .exmo_button:hover:not(:disabled), .exmo_button_ghost:hover:not(:disabled) {
+  .exmo_button:hover:not(:disabled), .exmo_button_ghost:hover:not(:disabled), .exmo_btn_group .btn_primary:hover:not(:disabled) {
     color: #2480E8; }
-  .exmo_button:disabled, .exmo_button_ghost:disabled {
+  .exmo_button:disabled, .exmo_button_ghost:disabled, .exmo_btn_group .btn_primary:disabled {
     opacity: .6; }
-  .exmo_button:active, .exmo_button_ghost:active {
+  .exmo_button:active, .exmo_button_ghost:active, .exmo_btn_group .btn_primary:active {
     background-color: rgba(255, 255, 255, 0.51); }
-  .exmo_button.warning, .warning.exmo_button_ghost {
+  .exmo_button.warning, .warning.exmo_button_ghost, .exmo_btn_group .warning.btn_primary {
     border-color: #ef988d;
     color: #be3c3c;
     background-color: #ffeaea; }
-    .exmo_button.warning:hover:not(:disabled), .warning.exmo_button_ghost:hover:not(:disabled) {
+    .exmo_button.warning:hover:not(:disabled), .warning.exmo_button_ghost:hover:not(:disabled), .exmo_btn_group .warning.btn_primary:hover:not(:disabled) {
       color: #FF0200; }
-    .exmo_button.warning:active, .warning.exmo_button_ghost:active {
+    .exmo_button.warning:active, .warning.exmo_button_ghost:active, .exmo_btn_group .warning.btn_primary:active {
       background-color: #fddddd; }
 
 .exmo_button_ghost {
@@ -117,3 +117,151 @@ i.adobe {
 
 .exmo_inbox {
   display: inline-block; }
+
+.exmo_btn_group {
+  position: relative;
+  margin: 10px 0;
+  height: 30px; }
+  .exmo_btn_group input {
+    opacity: 0.01;
+    position: absolute;
+    width: 0;
+    height: 0; }
+  .exmo_btn_group .btn_primary {
+    padding: 5px 10px;
+    position: relative;
+    border-radius: 0; }
+    .exmo_btn_group .btn_primary span {
+      margin-left: 3px; }
+    .exmo_btn_group .btn_primary:not(:nth-of-type(1)) {
+      border-left: none; }
+    .exmo_btn_group .btn_primary:nth-of-type(1) {
+      border-radius: 3px;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+      padding-right: 7px; }
+      .exmo_btn_group .btn_primary:nth-of-type(1) span {
+        margin-left: 0; }
+      .exmo_btn_group .btn_primary:nth-of-type(1) i {
+        margin-left: 3px;
+        margin-right: 3px; }
+    .exmo_btn_group .btn_primary:nth-last-of-type(1) {
+      border-bottom-right-radius: 3px;
+      border-top-right-radius: 3px;
+      padding-left: 9px; }
+      .exmo_btn_group .btn_primary:nth-last-of-type(1) span {
+        margin-left: 0; }
+      .exmo_btn_group .btn_primary:nth-last-of-type(1) i {
+        margin-left: 3px;
+        margin-right: 3px; }
+    .exmo_btn_group .btn_primary i {
+      font-size: 14px;
+      color: #5C5C5C;
+      vertical-align: text-bottom; }
+  .exmo_btn_group input:checked + .btn_primary {
+    color: #1e76e3;
+    background: #EAF5FF; }
+    .exmo_btn_group input:checked + .btn_primary i {
+      color: #1e76e3; }
+
+.exmo_button_icon {
+  outline: none;
+  border: none;
+  background: none;
+  border: 1px solid rgba(220, 220, 220, 0);
+  padding: 3px 8px;
+  margin-right: 0;
+  margin-right: 0; }
+  .exmo_button_icon i {
+    font-size: 18px;
+    color: #5C5C5C;
+    vertical-align: text-bottom; }
+  .exmo_button_icon:hover {
+    background: #fff;
+    border: 1px solid #DCDCDC; }
+  .exmo_button_icon:active {
+    background: rgba(146, 146, 146, 0.09); }
+  .exmo_button_icon.mini {
+    padding: 0px 3px; }
+    .exmo_button_icon.mini i {
+      font-size: 15px;
+      vertical-align: initial; }
+
+.exmo_icon_cheackbox {
+  opacity: 0.01;
+  position: absolute;
+  width: 0;
+  height: 0; }
+  .exmo_icon_cheackbox:checked + .exmo_button_icon {
+    border: 1px solid #bfbfbf;
+    background: rgba(80, 80, 80, 0.16); }
+
+.exmo_checkbox {
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  cursor: default;
+  -webkit-user-select: none;
+  line-height: 1rem; }
+  .exmo_checkbox input[type="checkbox"] {
+    position: absolute;
+    overflow: hidden;
+    padding: 0;
+    border: 0;
+    opacity: 0.001;
+    z-index: 1;
+    vertical-align: top;
+    outline: none;
+    height: 1rem;
+    width: 1rem;
+    margin-top: 0;
+    margin-right: -1rem;
+    margin-bottom: -1rem;
+    margin-left: 0; }
+  .exmo_checkbox .exmo_checkbox_shadow {
+    width: 1rem;
+    height: 1rem;
+    ox-sizing: border-box;
+    background-clip: padding-box;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    cursor: default;
+    user-select: none;
+    outline: none; }
+    .exmo_checkbox .exmo_checkbox_shadow::before {
+      content: '';
+      position: absolute;
+      width: 1rem;
+      height: 1rem;
+      background: #fefefe;
+      border: 1px solid rgba(14, 14, 14, 0);
+      border-radius: 3px;
+      border: none;
+      outline: none; }
+    .exmo_checkbox .exmo_checkbox_shadow::after {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 3px;
+      opacity: 0;
+      width: 8px;
+      height: 4px;
+      border: 2px solid #c6c8c8;
+      border-width: 3px;
+      background: #737373;
+      border-right: none;
+      border-top: none;
+      border-radius: 1px;
+      transform: rotate(-50deg);
+      outline: none; }
+  .exmo_checkbox input[type="checkbox"]:focus + .exmo_checkbox_shadow:before {
+    box-shadow: 0 0 0 1px #479ddc; }
+  .exmo_checkbox input[type="checkbox"]:active + .exmo_checkbox_shadow:before {
+    border: 1px solid #333434; }
+  .exmo_checkbox input[type="checkbox"]:checked + .exmo_checkbox_shadow:after {
+    opacity: 1; }
+  .exmo_checkbox input[type="checkbox"]:checked + .exmo_checkbox_shadow:before {
+    opacity: 1;
+    background: #737373;
+    border: 1px solid transparent; }
