@@ -138,7 +138,7 @@ $color_button_background: #fdfdfd;
 //按钮高亮颜色
 $color_button_highlight: #2480E8;
 //按钮按下颜色
-$color_button_active: rgba(255, 255, 255, 0.51);
+$color_button_active: rgba(0, 0, 0, 0.01);
 
 //按钮_警告_边框颜色
 $color_button_warning_border: rgb(239, 152, 141);
@@ -171,12 +171,11 @@ $color_button_warning_active: rgba(253, 221, 221, 1);
         opacity: .6;
     }
 
-    &:active {
+    &:active:not(:disabled) {
         background-color: $color_button_active
     }
 
     &.warning {
-
         border-color: $color_button_warning_border;
         color: $color_button_warning_read;
         background-color: $color_button_warning_background;
@@ -185,7 +184,7 @@ $color_button_warning_active: rgba(253, 221, 221, 1);
             color: $color_button_warning_highlight;
         }
 
-        &:active {
+        &:active:not(:disabled) {
             background-color: $color_button_warning_active;
         }
 
@@ -202,7 +201,7 @@ $color_button_ghost_read: #5C5C5C;
 //按钮高亮颜色
 $color_button_ghost_highlight: #f0f2fd;
 //按钮按下颜色
-$color_button_ghost_active: rgba(255, 255, 255, 0.51);
+$color_button_ghost_active: rgba(0, 0, 0, 0.01);
 
 .exmo_button_ghost {
     @extend .exmo_button;
@@ -357,11 +356,11 @@ $color_button_ghost_active: rgba(255, 255, 255, 0.51);
     }
 
     &.mini {
-        padding: 0px 3px;
-
+        padding: 2px 3px;
+        padding-top: 3px;
         i {
             font-size: 15px;
-            vertical-align: initial;
+            vertical-align: baseline;
         }
     }
 
@@ -504,6 +503,8 @@ $color_button_ghost_active: rgba(255, 255, 255, 0.51);
         vertical-align: top;
         cursor: default;
         user-select: none;
+        margin-right: 2px;
+        margin-left: 2px;
 
         &:before {
             content: '';
@@ -554,6 +555,7 @@ $color_button_ghost_active: rgba(255, 255, 255, 0.51);
     }
     input[type="radio"]:checked + .exmo_radio_shadow:before {
         background: #737373;
+        border: 1px solid rgba(14, 14, 14, 0);
     }
 
     input[type="radio"]:focus + .exmo_radio_shadow:before {
@@ -576,32 +578,20 @@ $color_button_ghost_active: rgba(255, 255, 255, 0.51);
     outline: none;
 
     &::-webkit-slider-thumb {
-        box-shadow: 0 0px 2px rgba(97, 97, 97, 0.97), 0px 3px 5px rgba(0, 0, 0, 0.13);
-        height: 12px;
-        width: 12px;
+        box-shadow: 0 0px 2px rgba(97, 97, 97, 0.36), 0px 3px 6px rgba(0, 0, 0, 0.18);
+        height: 14px;
+        width: 14px;
         border-radius: 10px;
         background: #ffffff;
         cursor: pointer;
         -webkit-appearance: none;
-        margin-top: -4px;
+        margin-top: -6px;
         outline: none;
 
-
-        &:hover{
+        &:hover {
             box-shadow: 0 0px 2px rgba(66, 66, 66, 0.97), 0px 4px 5px rgba(0, 0, 0, 0.18);
         }
     }
-
-    //&:focus::-webkit-slider-thumb {
-    //    border: 1px solid #0036ff;
-    //    box-shadow: inset 0 1px rgba(255,255,255,0.36), 0 0 0 2px #6fb5f1;
-    //}
-    //
-    //&:active::-webkit-slider-thumb {
-    //    border: 1px solid #333434;
-    //    box-shadow: inset 0 1px #737373;
-    //}
-    //
 
     &::-webkit-slider-runnable-track {
         border-radius: 4px;
@@ -612,41 +602,10 @@ $color_button_ghost_active: rgba(255, 255, 255, 0.51);
         height: 5px;
         outline: none;
     }
+
+    &:disabled::-webkit-slider-thumb {
+        background-color: #eaeaea;
+        box-shadow: 0 0px 1px rgba(66, 66, 66, 0.66);
+    }
+
 }
-
-//input[type=range] {
-//    -webkit-appearance: none;
-//    margin: 18px 0;
-//    width: 100%;
-//}
-//input[type=range]:focus {
-//    outline: none;
-//}
-//input[type=range]::-webkit-slider-runnable-track {
-//    width: 100%;
-//    height: 8.4px;
-//    cursor: pointer;
-//    animate: 0.2s;
-//    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-//    background: #3071a9;
-//    border-radius: 1.3px;
-//    border: 0.2px solid #010101;
-//}
-//input[type=range]::-webkit-slider-thumb {
-//    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-//    border: 1px solid #000000;
-//    height: 36px;
-//    width: 16px;
-//    border-radius: 3px;
-//    background: #ffffff;
-//    cursor: pointer;
-//    -webkit-appearance: none;
-//    margin-top: -14px;
-//}
-//input[type=range]:focus::-webkit-slider-runnable-track {
-//    background: #367ebd;
-//}
-//
-
-//------------------------
-
